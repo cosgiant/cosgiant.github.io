@@ -1,5 +1,6 @@
 theme: jekyll-theme-minimal
-title: COS System Maintenance Page
+title: System Maintenance Page
+logo: /assets/img/logo.png
 description: College of the Sequoias - System Maintenance Page
 github:
   repository_name: "https://www.cos.edu"
