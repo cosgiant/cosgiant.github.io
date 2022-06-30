@@ -1,4 +1,6 @@
-## College of the Sequoias System Maintenance Page
+# College of the Sequoias
+
+## System Maintenance Page
 
 If you have reached this page, the system or resource you are trying to access is not currently available.
 If you believe you have reached this page in error, please check the College of the Sequoias current [status monitoring page.](https://stats.uptimerobot.com/qrG6lF12W7)
