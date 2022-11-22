@@ -70,7 +70,7 @@ $(document).ready(function () {
                 '</div>');
         });
     };
-    // https://api.github.com/search/issues?q=repo:cosgiant/cosgiant.github.io+is:issue+label:%22public%20announcement%22+updated:%3E=2022-11-19
+
     $.getJSON('https://api.github.com/repos/' + config.github.org + '/' + config.github.repo + '/issues?q=repo:' + config.github.org + '/' + config.github.repo + 'is:issue+label:' + config.github.label + 'updated:>=' + config.github.lastUpdated ).done(message);
 
     function message(issues) {
