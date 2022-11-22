@@ -1,7 +1,9 @@
+
 $(document).ready(function () {
-    
-    let lastXDays = new Date(new Date().setDate(new Date().getDate() - 7)).toISOString().split('T')[0];
-    
+
+    let lastXDays = 7;
+    let getGitHubLastUpdatedDate = new Date(new Date().setDate(new Date().getDate() - lastXDays)).toISOString().split('T')[0];
+
     var config = {
         uptimerobot: {
             api_keys: [
@@ -13,8 +15,8 @@ $(document).ready(function () {
         github: {
             org: 'cosgiant',
             repo: 'cosgiant.github.io',
-            label: 'public announcement',
-            lastUpdated: lastXDays
+            label: '"public announcement"',
+            lastUpdated: getGitHubLastUpdatedDate
         }
     };
 
@@ -70,7 +72,8 @@ $(document).ready(function () {
         });
     };
 
-    $.getJSON('https://api.github.com/repos/' + config.github.org + '/' + config.github.repo + '/issues?q=repo:' + config.github.org + '/' + config.github.repo + 'is:issue+label:' + config.github.label + 'updated:>=' + config.github.lastUpdated ).done(message);
+    let gitHubApi = 'https://api.github.com/search/issues?q=repo:' + config.github.org + '/' + config.github.repo + 'is:issue+label:' + config.github.label + '+updated:>=' + config.github.lastUpdated;
+    $.getJSON(gitHubApi).done(message);
 
     function message(issues) {
         issues.forEach(function (issue) {
