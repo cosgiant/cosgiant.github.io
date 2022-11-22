@@ -15,7 +15,7 @@ $(document).ready(function () {
         github: {
             org: 'cosgiant',
             repo: 'cosgiant.github.io',
-            label: '"public announcement"',
+            labels: 'announcement',
             lastUpdated: getGitHubLastUpdatedDate
         }
     };
@@ -71,8 +71,8 @@ $(document).ready(function () {
                 '</div>');
         });
     };
-
-    let gitHubApi = 'https://api.github.com/search/issues?q=repo:' + config.github.org + '/' + config.github.repo + '+is:issue+label:' + config.github.label + '+updated:>=' + config.github.lastUpdated;
+    
+    let gitHubApi = 'https://api.github.com/repos/' + config.github.org + '/' + config.github.repo + '/issues?state=all&sort=updated&labels=' + config.github.label + '&since=config.github.lastUpdated';    
     $.getJSON(gitHubApi).done(message);
 
     function message(issues) {
