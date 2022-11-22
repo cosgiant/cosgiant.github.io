@@ -1,4 +1,8 @@
 $(document).ready(function () {
+    let updatedDate = new Date();
+    let lastXDays = updatedDate.getDate() - 7;
+    lastXDays.toISOString().split('T')[0];
+    
     var config = {
         uptimerobot: {
             api_keys: [
@@ -9,7 +13,9 @@ $(document).ready(function () {
         },
         github: {
             org: 'cosgiant',
-            repo: 'cosgiant.github.io'
+            repo: 'cosgiant.github.io',
+            label: 'public announcement',
+            lastUpdated: lastXDays
         }
     };
 
@@ -64,8 +70,8 @@ $(document).ready(function () {
                 '</div>');
         });
     };
-
-    $.getJSON('https://api.github.com/repos/' + config.github.org + '/' + config.github.repo + '/issues?state=all').done(message);
+    // https://api.github.com/search/issues?q=repo:cosgiant/cosgiant.github.io+is:issue+label:%22public%20announcement%22+updated:%3E=2022-11-19
+    $.getJSON('https://api.github.com/repos/' + config.github.org + '/' + config.github.repo + '/issues?q=repo:' + config.github.org + '/' + config.github.repo + 'is:issue+label:' + config.github.label + 'updated:>=' + config.github.lastUpdated ).done(message);
 
     function message(issues) {
         issues.forEach(function (issue) {
