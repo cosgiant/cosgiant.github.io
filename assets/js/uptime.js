@@ -1,6 +1,6 @@
 $(document).ready(function () {
     
-    let lastXDays = new Date(new Date().setDate(new Date().getDate() - 7)).toISOString();.split('T')[0];
+    let lastXDays = new Date(new Date().setDate(new Date().getDate() - 7)).toISOString().split('T')[0];
     
     var config = {
         uptimerobot: {
