@@ -72,7 +72,7 @@ $(document).ready(function () {
         });
     };
     
-    let gitHubApi = 'https://api.github.com/repos/' + config.github.org + '/' + config.github.repo + '/issues?state=all&sort=updated&labels=' + config.github.label + '&since=' + config.github.lastUpdated;    
+    let gitHubApi = 'https://api.github.com/repos/' + config.github.org + '/' + config.github.repo + '/issues?state=all&sort=updated&labels=' + config.github.labels + '&since=' + config.github.lastUpdated;    
     $.getJSON(gitHubApi).done(message);
 
     function message(issues) {
