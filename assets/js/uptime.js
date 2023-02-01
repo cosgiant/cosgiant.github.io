@@ -7,8 +7,17 @@ $(document).ready(function () {
     var config = {
         uptimerobot: {
             api_keys: [
-                //Read-only
-                "ur1781698-69cb988c2ed64b0d2dc222ad"
+                // Read-only
+                // Banner
+                "m793416275-fdcc3baeef7951ea0489d468",
+                // Canvas
+                "m793436776-0328bebbc590f1298fc24349",
+                // Cos.edu
+                "m793436180-f382a25b8a58024ccceb079b",
+                // Google.com
+                "m792187667-1cc77652326e1bc8213b003a",
+                // MyGiant
+                "m793436104-da376d68e5b3419836093691"
             ],
             logs: 1
         },
